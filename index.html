@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hillary Houston | Frontend Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="./assets/cupcake.png">
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+  <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+emailjs.init({
+  publicKey: "x7Uv_5a2UEYBvOgGR",
+});
+})();
+</script>
+</head>
+
+<body>
+  <section id="landing-page" onmousemove="moveBackground(event)">
+    <nav>
+      <div class="personal__logo">Hillary Houston | Frontend Developer</div>
+      <ul class="nav__link--list">
+        <li class="nav__link" onclick="toggleModal()">
+          <a href="#" class="
+            nav__link--anchor
+            link__hover-effect
+            link__hover-effect--black
+          ">About</a>
+        </li>
+        <li class="nav__link">
+          <a href="#projects" class="
+            nav__link--anchor
+            link__hover-effect
+            link__hover-effect--black
+          ">Projects</a>
+        </li>
+        <li class="nav__link" onclick="toggleModal()">
+          <a href="#" class="
+            nav__link--anchor
+            link__hover-effect
+            link__hover-effect--black
+          ">Contact</a>
+        </li>
+        <li class="nav__link click" onclick="toggleContrast()">
+          <a href="#" class="
+            nav__link--anchor
+            link__hover-effect
+            link__hover-effect--black
+          "><i class="fas fa-adjust"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <header class="header">
+      <div class="flex flex-1">
+        <div class="about-me__info row">
+          <div class="about-me__info--container">
+            <figure class="about-me__picture--mask">
+              <img src="./assets/profile.jpg" class="about-me__picture" alt="Picture of Me!">
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="header__content">
+        <h1 class="title">Hey!</h1>
+        <h1 class="title pink">I'm <span class="text--pink">Hillary</span>&nbsp;<span class="wave">👋</span></h1>
+        <p class="header__para">
+          I'm a passionate <strong class="text--pink">Frontend Developer</strong>.<br> I build clean, usable, and
+            accessible websites and web applications.
+          <br>
+          Here's a bit more <a href="./aboutMe.html" target="_blank"><b class="pink click">about me</a></b>.
+        </p>
+        <div class="social__list">
+          <a href="https://www.linkedin.com/in/hillaryhouston/" target="_blank" class="social__link click">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/hhouston823" target="_blank" class="social__link click">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="./assets/Frontend Developer_Hillary Houston Resume.pdf" target="_blank" class="social__link click">
+            <i class="fas fa-file-pdf"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <a href="#">
+      <button class="mail__btn click" onclick="toggleModal()">
+        <i class="fas fa-envelope"></i>
+      </button>
+    </a>
+    <a href="#projects" class="scroll">
+    </a>
+    <div class="modal">
+      <div class="modal__half modal__about">
+        <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+        <h4 class="modal__sub-title modal__sub-title--about">Frontend Developer.</h4>
+        <p class="modal__para">
+          I'm a 36 year-old female <b class="pink">frontend developer</b> with experience developing
+          projects using <b class="pink">HTML</b>, <b class="pink">CSS</b>, and <b class="pink">JavaScript</b>.
+          <br>
+          I am self-taught, with bootcamp experience as well. This is my current <b class="pink">tech stack</b>:
+        </p>
+        <div class="modal__languages">
+          <figure class="modal__language">
+            <img class="modal__language--img"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+              alt="">
+            <span class="language__name">HTML</span>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+              alt="">
+            <span class="language__name">CSS</span>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+              alt="">
+            <span class="language__name">JavaScript</span>
+          </figure>
+          <figure class="modal__language">
+            <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
+              alt="">
+            <span class="language__name">React</span>
+          </figure>
+
+        </div>
+      </div>
+      <div class="modal__half modal__contact">
+        <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+        <h3 class="modal__title modal__title--contact">
+          Let's have a chat!
+        </h3>
+        <h3 class="modal__sub-title modal__sub-title--contact">
+          I'm currently open to new opportunities.
+        </h3>
+        <form id="contact__form" onsubmit="contact(event)">
+          <div class="form__item">
+            <label class="form__item--label">Name</label>
+            <input class="input" name="user_name" type="text" required></input>
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Email</label>
+            <input class="input" name="user_email" type="email" required></input>
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Message</label>
+            <textarea class="input" name="message" type="text" required></textarea>
+          </div>
+          <button id="contact__submit" class="form__submit">
+            Send it my way
+          </button>
+        </form>
+        <div class="modal__overlay modal__overlay--loading">
+          <i class="fas fa-spinner"></i>
+        </div>
+        <div class="modal__overlay modal__overlay--success">
+          Thanks for the message! Looking forward to speaking to you soon.
+        </div>
+      </div>
+    </div>
+    <img src="./assets/semi circle.svg" class="shape shape--0">
+    <img src="./assets/circle.svg" class="shape shape--1">
+    <img src="./assets/squiggly.svg" class="shape shape--2">
+    <img src="./assets/circle.svg" class="shape shape--3">
+    <img src="./assets/triangle.svg" class="shape shape--4">
+    <img src="./assets/circle.svg" class="shape shape--5">
+    <img src="./assets/squiggly.svg" class="shape shape--6">
+    <img src="./assets/circle.svg" class="shape shape--7">
+    <img src="./assets/semi circle.svg" class="shape shape--8">
+  </section>
+  <section id="languages" onmousemove="moveBackground(event)">
+    <div class="container">
+      <div class="row">
+        <h1 class="section__title">This is my <span class="text--pink">technology stack</span></h1>
+        <div class="language__list">
+          <div class="language">
+            <figure class="language__img--wrapper">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                alt="Html Logo" class="language__img" />
+            </figure>
+            <span class="language__name">HTML</span>
+          </div>
+          <div class="language">
+            <figure class="language__img--wrapper">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="CSS Logo"
+                class="language__img" />
+            </figure>
+            <span class="language__name">CSS</span>
+          </div>
+          <div class="language">
+            <figure class="language__img--wrapper">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="JavaScript Logo"
+                class="language__img" />
+            </figure>
+            <span class="language__name">JavaScript</span>
+          </div>
+          <div class="language">
+            <figure class="language__img--wrapper">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="React Logo"
+                class="language__img" />
+            </figure>
+            <span class="language__name">React</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects" onmousemove="moveBackground(event)">
+    <div class="container">
+      <div class="row">
+        <h1 class="section__title">
+          Here are some of my <span class="pink">projects</span>
+        </h1>
+        <ul class="project__list">
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="./assets/travel-agent-website.png" class="project__img" alt="Travel Agent Website">
+              <div class="project__description">
+                <h3 class="project__description--title">Travel Agent Website</h3>
+                <h4 class="project__description--sub-title">
+                  HTML, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">
+                  As a web development enthusiast, I was thrilled to collaborate with my sister in launching her Disney Travel Agency. I crafted a visually appealing and user-friendly website that showcases her extensive knowledge and passion for Disney vacations. The website features an intuitive interface and engaging visuals that capture the magic of Disney. This digital platform enables my sister to effectively communicate with clients, promote her services, and establish a strong online reputation in the travel industry.
+                </p>
+                <div class="project__description--links">
+                  <a href="https://github.com/hhouston823/travel-agent-website" target="_blank" class="project__description--link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="./projects/travel-agent-website-main/index.html" class="project__description--link" target="_blank">
+                    <i class="fas fa-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="./assets/shoe-store-website.jpg" class="project__img" alt="Shoe Store Website">
+              <div class="project__description">
+                <h3 class="project__description--title">Shoe Store Website</h3>
+                <h4 class="project__description--sub-title">
+                  HTML, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">
+                  I'm thrilled to share my latest project - a comprehensive shoe store website project, combining HTML, CSS, and JavaScript to create a seamless shopping experience for customers. The website features a responsive design that adapts to various devices and screen sizes, ensuring a smooth user experience across desktops, tablets, and mobile phones. With a customizable layout, administrators can easily manage products, categories, and promotions. Interactive elements like product filters, animations, and hover effects were implemented using JavaScript to enhance the overall user experience. The website's visual appeal was achieved through CSS-driven styling, with attention to detail in typography, color scheme, and imagery. By combining these technologies, I was able to create a visually appealing and user-friendly e-commerce platform that showcases my proficiency in HTML, CSS, and JavaScript.
+                </p>
+                <div class="project__description--links">
+                  <a href="https://github.com/hhouston823/shoe-store-website" target="_blank" class="project__description--link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="./shoe-store-main/index.html" class="project__description--link" target="_blank">
+                    <i class="fas fa-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="./assets/to-do-app.jpg" class="project__img" alt="To-Do List App">
+              <div class="project__description">
+                <h3 class="project__description--title">To-Do List App</h3>
+                <h4 class="project__description--sub-title">
+                  HTML, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">
+                  Get organized and stay on top of your tasks with our simple and intuitive to-do list app. Easily add, mark as completed, and delete tasks as you go, with your progress saved locally for future access. Whether you're a student, professional, or simply looking to stay organized, our app provides a convenient and clutter-free way to manage your daily tasks. Start achieving your goals today with this hassle-free to-do list app!</p>
+                <div class="project__description--links">
+                  <a href="https://github.com/hhouston823/to-do-app" target="_blank" class="project__description--link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="./to-do-list-app-main/index.html" class="project__description--link" target="_blank">
+                    <i class="fas fa-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="./assets/weather-app.jpg" class="project__img" alt="Weather App">
+              <div class="project__description">
+                <h3 class="project__description--title">Weather App</h3>
+                <h4 class="project__description--sub-title">
+                  HTML, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">
+                  This weather app allows users to search for any city and receive real-time weather information. The app fetches data from a reliable API source and displays temperature, humidity, and wind speed in an easy-to-read format. It has a clean and modern design and can fetch data for any city worldwide. The app is user-friendly, versatile, accurate, and a valuable tool for anyone who wants to stay informed about the weather.
+                </p>
+                <div class="project__description--links">
+                  <a href="https://github.com/hhouston823/weather-app" target="_blank" class="project__description--link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="./weather-app-main/index.html" class="project__description--link" target="_blank">
+                    <i class="fas fa-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="project">
+            <div class="project__wrapper">
+              <img src="./assets/quiz-app.jpg" class="project__img" alt="Quiz App">
+              <div class="project__description">
+                <h3 class="project__description--title">Disney World Quiz App</h3>
+                <h4 class="project__description--sub-title">
+                  HTML, CSS, JavaScript
+                </h4>
+                <p class="project__description--para">
+                  This simple Disney World Quiz App is an engaging interactive experience that tests users' knowledge of the iconic theme park. Using HTML, CSS, and JavaScript, I’ve created a user-friendly interface that presents four questions, each with four multiple-choice answers. Users can select their responses and receive instant feedback on their scores, making it a fun and competitive experience. With its simple yet effective design, this quiz app is sure to delight Disney fans of all ages!
+                </p>
+                <div class="project__description--links">
+                  <a href="https://github.com/hhouston823/quiz-app" target="_blank" class="project__description--link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="./quiz-app-main/index.html" class="project__description--link" target="_blank">
+                    <i class="fas fa-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row footer__row">
+        <a href="#" class="footer__anchor">
+          <figure class="footer__logo">
+            <img src="./assets/signature.png" class="footer__logo--img" alt="">
+          </figure>
+          <span class="footer__logo--popper">
+            Top
+            <i class="fas fa-arrow-up"></i>
+          </span>
+        </a>
+        <div class="footer__social--list">
+          <a href="https://github.com/hhouston823" target="_blank" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white
+        ">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/hillaryhouston/" target="_blank" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white
+        ">
+            LinkedIn
+          </a>
+          <a href="#" onclick="toggleModal()" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white
+        ">
+            Contact
+          </a>
+          <a href="./assets/Frontend Developer_Hillary Houston Resume.pdf" target="_blank" class="
+          footer__social--link
+          link__hover-effect
+          link__hover-effect--white
+        ">
+            Resume
+          </a>
+        </div>
+        <div class="footer__copyright">Copyright &copy; 2024 Hillary Houston</div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
